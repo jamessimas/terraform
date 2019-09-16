@@ -14,7 +14,7 @@ resource "aws_eip" "ip" {
 #}
 
 resource "aws_instance" "example" {
-  ami           = "ami-00513ac407df1a26b"
+  ami           = var.amis[var.region]
   instance_type = "t2.micro"
   #depends_on = [aws_s3_bucket.example]
   provisioner "local-exec" {
